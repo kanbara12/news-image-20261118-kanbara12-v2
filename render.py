@@ -55,7 +55,7 @@ def fit_lines(draw, text, font, width, max_lines):
 
 # ---------------------------------------------------------------- stories
 # (n, region, source, headline, deck, art_kind, art_data)
-REGIONS = ["ASIA", "EUROPE", "MIDDLE EAST", "AFRICA", "AMERICAS", "OCEANIA", "WORLD"]
+REGIONS = ["ASIA", "OCEANIA", "EUROPE", "MIDDLE EAST", "AFRICA", "AMERICAS", "WORLD"]
 REGION_COLOR = {
     "ASIA": (178, 34, 34), "EUROPE": (20, 38, 63), "MIDDLE EAST": (146, 90, 16),
     "AFRICA": (15, 118, 110), "AMERICAS": (90, 60, 140), "OCEANIA": (0, 110, 120),
@@ -189,24 +189,23 @@ def art_gulf(d, x, y, w, h):
            anchor="ra", fill=(255, 200, 60))
 
 def art_drones(d, x, y, w, h):
-    """141 dots, 126 downed (grey) vs 15 through (red); big 141."""
+    """141 dots, 126 downed (grey) vs 15 through (red); big 141.
+    Grid is 12x12 in the left ~2/3 so all 141 dots draw: the 141
+    callout sits in the clear right column, the caption below the grid."""
     d.rectangle([x, y, x + w, y + h], fill=(24, 24, 28))
     n = 0
-    for r in range(9):
-        for c in range(16):
+    for r in range(12):
+        for c in range(12):
             if n >= 141:
                 break
-            dx = x + 12 + c * ((w - 24) // 15)
-            dy = y + 8 + r * 9
-            if dx > x + w * 0.66 and dy > y + h * 0.55:
-                n += 1
-                continue  # clear zone for the 141 callout
+            dx = x + 12 + c * 20
+            dy = y + 6 + r * 7
             col = (120, 120, 120) if n < 126 else (230, 60, 50)
             d.ellipse([dx - 3, dy - 3, dx + 3, dy + 3], fill=col)
             n += 1
-    d.text((x + w - 8, y + h - 40), "141", font=SANS_B(28), anchor="ra", fill=(255, 255, 255))
-    d.text((x + w - 8, y + h - 12), "DRONES · 126 DOWNED", font=SANS_B(10),
-           anchor="ra", fill=(255, 200, 60))
+    d.text((x + w - 8, y + 44), "141", font=SANS_B(28), anchor="ra", fill=(255, 255, 255))
+    d.text((x + w - 8, y + h - 2), "DRONES · 126 DOWNED", font=SANS_B(10),
+           anchor="rb", fill=(255, 200, 60))
 
 def art_chart(d, x, y, w, h):
     """Falling Dow line chart with -561 callout."""
@@ -422,8 +421,12 @@ def draw_map(d, x, y, w, h):
     pins = {1: (113, 22), 2: (50, 27), 3: (36, 49), 4: (-77, 39), 5: (-122, 37),
             6: (-77, 39), 7: (5, 50), 8: (-118, 34), 9: (80, 16), 10: (121, 14),
             11: (-122, 37), 12: (90, 24), 13: (26, 45)}
-    # offsets (px) for pins sharing a city, with connector lines
-    pin_off = {5: (0, -13), 8: (15, 9), 11: (-15, 10), 6: (20, -14)}
+    # offsets (px) for pins sharing a city, with connector lines.
+    # Verified by geometry (proj + land test, 19 Nov): every badge sits
+    # on land and >=17px from every other badge. 6 was in the Atlantic,
+    # 11 in the Pacific; 1-10, 3-13, 9-12 overlapped.
+    pin_off = {1: (6, -12), 5: (0, -18), 6: (-13, -13), 8: (15, 9),
+               12: (0, -10), 13: (14, 12)}
     # jitter brief dots deterministically by story number
     import hashlib
     brief_xy = {14: (18, 39), 15: (39, 9), 16: (34, 31), 17: (2, 47), 18: (121, 14),
@@ -445,7 +448,8 @@ def draw_map(d, x, y, w, h):
             d.ellipse([px - 2, py - 2, px + 2, py + 2], fill=RED)
         px, py = px + ox, py + oy
         d.ellipse([px - 8, py - 8, px + 8, py + 8], fill=RED, outline=(255, 255, 255), width=1)
-        d.text((px, py), str(n), font=SANS_B(8), anchor="mm", fill=(255, 255, 255))
+        d.text((px, py), str(n), font=SANS_B(10), anchor="mm", fill=(255, 255, 255),
+               stroke_width=1, stroke_fill=(255, 255, 255))
     d.text((x + 8, y + h - 20), "Pins are approximate.", font=SANS(9), fill=GREY)
 
 def render():
@@ -471,9 +475,15 @@ def render():
         segs.append((x, wseg, r))
         x += wseg
     for sx, wseg, r in segs:
-        label = "%s %d" % (r, REGION_COUNT[r]) if wseg >= 45 else str(REGION_COUNT[r])
-        d.text((sx + wseg / 2, 90), label, font=SANS_B(8),
-               anchor="mm", fill=(255, 255, 255))
+        label = "%s %d" % (r, REGION_COUNT[r])
+        if wseg >= 45:
+            d.text((sx + wseg / 2, 90), label, font=SANS_B(8),
+                   anchor="mm", fill=(255, 255, 255))
+        else:
+            # narrow segment (OCEANIA sits between two wide segments, so
+            # its smaller label overflows onto empty space, never on text)
+            d.text((sx + wseg / 2, 90), label, font=SANS_B(7),
+                   anchor="mm", fill=(255, 255, 255))
     # ---- UTC strip
     d.rectangle([10, 104, W - 10, 122], fill=(255, 255, 255), outline=(200, 195, 180), width=1)
     d.text((16, 113), "THE DAY IN UTC", font=SANS_B(10), anchor="lm", fill=NAVY)
