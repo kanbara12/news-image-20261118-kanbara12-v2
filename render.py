@@ -438,16 +438,34 @@ def draw_map(d, x, y, w, h):
                 34: (10, 52), 35: (25, 61), 36: (133, -25), 37: (113, -2), 38: (39, 9),
                 39: (-100, 50), 40: (90, 24), 41: (29, 41), 42: (-3, 40), 43: (33, 2),
                 44: (41, 3), 45: (6, 11), 46: (-62, -3), 47: (77, 13), 48: (30, -2)}
+    # offsets (px) for dots that would sit under a pin badge or touch
+    # another dot. Found by geometry (proj + pairwise check): every dot
+    # must end up >=12px from every badge centre and >=8px from every
+    # other dot. Offsets keep each dot in its story's broad region;
+    # the region is also carried by the dot colour.
+    dot_off = {14: (-5, 11), 17: (5, 11), 19: (5, -11), 21: (5, -11),
+               22: (0, -14), 24: (0, 12), 26: (17, 7), 28: (-5, -11),
+               29: (5, 11), 30: (0, 12), 31: (0, 20), 32: (-8, 18),
+               33: (-8, -8), 34: (-16, 0), 39: (0, -12), 40: (5, 11),
+               41: (0, 28), 43: (5, 11), 44: (-11, -5), 47: (20, 0),
+               48: (0, 12)}
     for n, (lon, lat) in brief_xy.items():
         px, py = proj(lon, lat)
-        d.ellipse([px - 3, py - 3, px + 3, py + 3], fill=REGION_COLOR[
+        ox, oy = dot_off.get(n, (0, 0))
+        d.ellipse([px + ox - 3, py + oy - 3, px + ox + 3, py + oy + 3], fill=REGION_COLOR[
             dict((b[0], b[1]) for b in BRIEFS)[n]])
+    # pins in TWO passes: connector lines + base dots first, then badges
+    # + digits. (One pass let pin 6's connector paint red over pin 4's
+    # badge — pins 4 and 6 share Washington DC.)
     for n, (lon, lat) in pins.items():
         px, py = proj(lon, lat)
         ox, oy = pin_off.get(n, (0, 0))
         if (ox, oy) != (0, 0):
             d.line([(px, py), (px + ox, py + oy)], fill=RED, width=1)
             d.ellipse([px - 2, py - 2, px + 2, py + 2], fill=RED)
+    for n, (lon, lat) in pins.items():
+        px, py = proj(lon, lat)
+        ox, oy = pin_off.get(n, (0, 0))
         px, py = px + ox, py + oy
         d.ellipse([px - 8, py - 8, px + 8, py + 8], fill=RED, outline=(255, 255, 255), width=1)
         d.text((px, py), str(n), font=SANS_B(10), anchor="mm", fill=(255, 255, 255))
