@@ -73,31 +73,31 @@ LEADS = [
      "Ukraine downs 126 by 08:00; six hurt in Dnipro as strikes hit seven locations.",
      "drones"),
     (4, "AMERICAS", "FED", "Fed minutes point to more hikes; Dow falls 561",
-     "Almost all officials back further rises. Waller backs a half-point move in December.",
+     "Almost all back further rises; some see a bigger move in December.",
      "chart"),
     (5, "WORLD", "SENSOR TOWER", "GTA VI launches at midnight tonight",
-     "Take-Two jumps 8% on launch eve; 17.1m copies already sold, Metacritic 99.",
+     "Take-Two up 6% on launch eve; 17.1m pre-orders, Metacritic 99.",
      "gta"),
     (6, "AMERICAS", "CNN", "Jeffries wins speaker nomination 251-11",
-     "Democrats pick their first Black speaker nominee; eleven vote against him.",
+     "Democrats renominate Jeffries; if elected in January he would be the first Black Speaker.",
      "votes"),
     (7, "EUROPE", "REUTERS", "EU offers Ukraine a EUR 45bn loan",
      "EUR 25bn for arms, EUR 20bn for the budget, tied to anti-graft reforms.",
      "money"),
     (8, "WORLD", "NASA", "Voyager 1 reaches one light-day",
-     "16.1 billion miles from Earth; a signal now takes a full day to return.",
+     "16.1 billion miles from Earth; a one-way signal now takes a full day.",
      "voyager"),
     (9, "ASIA", "IMD", "Cyclone Akvan bears down on Andhra",
-     "Winds of 120-130 km/h; landfall expected Friday as the coast braces.",
+     "Winds of 100-110 km/h, gusting 120; landfall expected Friday as the coast braces.",
      "cyclone"),
-    (10, "ASIA", "AP", "Quad meets in Manila for the first time in two years",
-     "Maritime and AI plan agreed; Trump announces a trade deal with the Philippines.",
-     "quad"),
+    (10, "ASIA", "REUTERS", "Indonesia, China seal $71.8bn in deals",
+     "Four partnerships at APEC Shenzhen, incl. 10 smart cities; $50bn Danantara-led deal.",
+     "deals"),
     (11, "AMERICAS", "REUTERS", "Anthropic prices its IPO at $83",
      "Above the $70-78 range; shares start trading Thursday as ANT.",
      "ipo"),
     (12, "ASIA", "AP", "Bangladesh garment strike spreads",
-     "300 arrested, 132 factories shut as workers demand Tk30,000 a month.",
+     "132 factories shut, hundreds arrested as workers demand Tk30,000 a month.",
      "strike"),
     (13, "EUROPE", "USGS", "Magnitude 5.7 quake shakes Romania",
      "Vrancea tremor felt across Ukraine and Moldova; no major damage reported.",
@@ -111,39 +111,39 @@ BRIEFS = [
     (16, "MIDDLE EAST", "Israel ground op crosses Gaza's Yellow Line"),
     (17, "EUROPE", "146,000 march in France over cost of living"),
     (18, "ASIA", "Trump seals trade understanding with Manila"),
-    (19, "EUROPE", "Germany pledges more air-defence aid to Kyiv"),
+    (19, "EUROPE", "UK, EU drop 'trusted partnership' term"),
     (20, "MIDDLE EAST", "Saudi-backed forces strike Houthi targets"),
     (21, "MIDDLE EAST", "UAE oil tanker attacked in Strait of Hormuz"),
-    (22, "AMERICAS", "Outages hit Microsoft, FAA and banks; Rubio: no cause yet"),
+    (22, "AMERICAS", "Outages hit Microsoft, FAA and banks; Rubio: no link found"),
     (23, "AMERICAS", "Hegseth announces US-Venezuela military ties in Caracas"),
-    (24, "AMERICAS", "Waller: half-point Fed hike likely in December"),
-    (25, "EUROPE", "UN: 372 Ukrainian civilians killed in October"),
+    (24, "AMERICAS", "Waller calls for half-point Fed hike in December"),
+    (25, "EUROPE", "Europe EV sales jump 60% in October"),
     (26, "EUROPE", "Ukraine refinery strikes cut Russian output 45%"),
-    (27, "ASIA", "Russian jets fly off Taiwan and into Japan airspace"),
-    (28, "ASIA", "Taiwan logs 10 PLA sorties and 11 ships"),
+    (27, "ASIA", "Japan exports hit record ¥11.8tn in October"),
+    (28, "ASIA", "India-US trade deal nearly done, signing waits"),
     (29, "AMERICAS", "Nvidia slips 2.9% a day after its earnings beat"),
     (30, "AMERICAS", "UnitedHealth falls 10% on Medicare audit plan"),
-    (31, "EUROPE", "Serbian military jet crashes near Belgrade, pilot killed"),
-    (32, "EUROPE", "Ex-Kosovo president Thaci sentenced to 17 months"),
-    (33, "EUROPE", "Two trains collide near Prague, 46 injured"),
-    (34, "EUROPE", "NATO warns members: prepare for conflict at any moment"),
-    (35, "EUROPE", "Finland seeks timetable to end the Ukraine war"),
+    (31, "EUROPE", "Germany adopts first financial-literacy plan"),
+    (32, "EUROPE", "Officials: sunken LPG tanker was hit by 4 projectiles"),
+    (33, "EUROPE", "UK inflation hits 3.6%, highest in a year"),
+    (34, "EUROPE", "EU Parliament threatens to block €1.8tn budget"),
+    (35, "EUROPE", "EU agrees to speed up grid permits"),
     (36, "OCEANIA", "Australia sanctions over West Bank settlements"),
     (37, "ASIA", "EU approves signing EU-Indonesia trade deals"),
-    (38, "AFRICA", "Congo Ebola passes 11,400 cases, fastest on record"),
-    (39, "AMERICAS", "US loses measles elimination status; 5,412 cases"),
+    (38, "AFRICA", "Ethiopian Airlines hit by cyberattack"),
+    (39, "AMERICAS", "Canada pitches Mexico on defence bank"),
     (40, "ASIA", "Bangladesh: 71 arrested in Hasina-return unrest"),
     (41, "EUROPE", "Istanbul mayor Imamoglu gets 2 more years and a ban"),
-    (42, "EUROPE", "Knesset elects Matan Kahana as speaker"),
+    (42, "EUROPE", "Spain approves 7 decree-laws, €182m flood aid"),
     (43, "AFRICA", "Uganda activist Mugumya charged with treachery"),
-    (44, "AFRICA", "Mozambique's Mondlane goes on trial"),
-    (45, "AFRICA", "Zamfara police free 20 abducted women and children"),
-    (46, "AMERICAS", "Rare contact with isolated people in the Amazon"),
+    (44, "AFRICA", "EU gives €550,000 for Moyale displaced"),
+    (45, "AFRICA", "AfDB funds $750,000 ECOWAS Data Embassy"),
+    (46, "AMERICAS", "China's Jetour to build cars in Brazil"),
     (47, "ASIA", "Tendulkar leads tributes a day after Dhoni's farewell"),
-    (48, "ASIA", "Uganda Airlines starts daily Entebbe-Kigali flights"),
+    (48, "AFRICA", "Uganda Airlines starts daily Entebbe-Kigali flights"),
 ]
 
-REGION_COUNT = {"ASIA": 11, "EUROPE": 14, "MIDDLE EAST": 4, "AFRICA": 5,
+REGION_COUNT = {"ASIA": 10, "EUROPE": 14, "MIDDLE EAST": 4, "AFRICA": 6,
                 "AMERICAS": 10, "OCEANIA": 1, "WORLD": 3}
 
 # ---------------------------------------------------------------- vector art
@@ -235,9 +235,9 @@ def art_gta(d, x, y, w, h):
             ey = y + h * 0.18 + math.sin(a - 1.57) * 12
             d.line([(bx, y + h * 0.18), (ex, ey)], fill=(40, 30, 30), width=2)
     d.text((x + 12, y + 6), "17.1M", font=SANS_B(30), fill=(40, 30, 30))
-    d.text((x + 12, y + 38), "COPIES SOLD", font=SANS_B(11), fill=(40, 30, 30))
+    d.text((x + 12, y + 38), "PRE-ORDERS", font=SANS_B(11), fill=(40, 30, 30))
     d.rectangle([x, y + h - 22, x + w, y + h], fill=(40, 30, 30))
-    d.text((x + w - 10, y + h - 11), "TAKE-TWO +8% · 99 METACRITIC", font=SANS_B(11),
+    d.text((x + w - 10, y + h - 11), "TAKE-TWO +6% · 99 METACRITIC", font=SANS_B(11),
            anchor="rm", fill=(255, 255, 255))
 
 def art_votes(d, x, y, w, h):
@@ -249,7 +249,7 @@ def art_votes(d, x, y, w, h):
     bx, by, bw, bh = x + 12, y + h - 30, w - 24, 16
     d.rectangle([bx, by, bx + bw, by + bh], fill=(60, 80, 110))
     d.rectangle([bx, by, bx + bw * 251 / 262, by + bh], fill=(90, 160, 255))
-    d.text((x + w / 2, y + h - 11), "FIRST BLACK SPEAKER NOMINEE", font=SANS_B(9),
+    d.text((x + w / 2, y + h - 11), "FIRST BLACK SPEAKER IF ELECTED", font=SANS_B(9),
            anchor="ma", fill=(255, 255, 255))
 
 def art_money(d, x, y, w, h):
@@ -270,7 +270,7 @@ def art_voyager(d, x, y, w, h):
     """Voyager: sun, distance scale, probe dot at one light-day."""
     d.rectangle([x, y, x + w, y + h], fill=(10, 12, 30))
     d.ellipse([x + 10, y + h * 0.62 - 14, x + 38, y + h * 0.62 + 14], fill=(255, 200, 60))
-    d.text((x + 12, y + h - 20), "SUN", font=SANS_B(9), fill=(255, 200, 60))
+    d.text((x + 44, y + h - 20), "SUN", font=SANS_B(9), fill=(255, 200, 60))
     # scale line
     sy = y + h * 0.62
     d.line([(x + 44, sy), (x + w - 30, sy)], fill=(120, 140, 180), width=2)
@@ -295,23 +295,15 @@ def art_cyclone(d, x, y, w, h):
     d.polygon([(x + w * 0.68, y), (x + w, y), (x + w, y + h), (x + w * 0.78, y + h)],
               fill=(214, 196, 150))
     d.text((x + w - 8, y + 8), "ANDHRA", font=SANS_B(10), anchor="ra", fill=INK)
-    d.text((x + w - 8, y + h - 40), "120-130", font=SANS_B(24), anchor="ra", fill=(20, 60, 110))
-    d.text((x + 10, y + h - 14), "KM/H · LANDFALL FRI", font=SANS_B(10), fill=INK)
+    d.text((x + w - 8, y + h - 40), "100-110", font=SANS_B(24), anchor="ra", fill=(20, 60, 110))
+    d.text((x + 10, y + h - 14), "GUSTING 120 · LANDFALL FRI", font=SANS_B(10), fill=INK)
 
-def art_quad(d, x, y, w, h):
-    """Four flags over Manila Bay sunset."""
-    d.rectangle([x, y, x + w, y + h], fill=(255, 170, 90))
-    d.rectangle([x, y + h * 0.6, x + w, y + h], fill=(40, 80, 120))
-    d.ellipse([x + w * 0.62, y + 10, x + w * 0.62 + 34, y + 44], fill=(255, 230, 150))
-    # four flag poles
-    cols = [(178, 34, 34), (20, 38, 63), (15, 118, 110), (201, 162, 39)]
-    for i, c in enumerate(cols):
-        fx = x + 16 + i * 22
-        d.line([(fx, y + h * 0.6), (fx, y + h * 0.28)], fill=INK, width=2)
-        d.rectangle([fx, y + h * 0.28, fx + 18, y + h * 0.28 + 12], fill=c)
-    d.text((x + 10, y + h - 26), "4 NATIONS · MANILA", font=SANS_B(12), fill=(255, 255, 255))
-    d.text((x + 10, y + h - 12), "MARITIME + AI PLAN", font=SANS_B(11),
-           fill=(255, 230, 150))
+def art_deals(d, x, y, w, h):
+    """Indonesia-China deals: $71.8bn, 4 partnerships at APEC."""
+    d.rectangle([x, y, x + w, y + h], fill=(235, 230, 214))
+    d.text((x + 10, y + 6), "$71.8bn", font=SANS_B(30), fill=(20, 38, 63))
+    d.text((x + 10, y + 40), "INDONESIA-CHINA", font=SANS_B(11), fill=INK)
+    d.text((x + 10, y + h - 14), "4 DEALS · APEC SHENZHEN", font=SANS_B(10), fill=GREY)
 
 def art_ipo(d, x, y, w, h):
     """IPO price tag: $83 above the $70-78 range."""
@@ -335,8 +327,8 @@ def art_strike(d, x, y, w, h):
         px = x + 16 + i * 18
         d.ellipse([px - 4, y + 14, px + 4, y + 22], fill=(178, 34, 34))
         d.line([(px, y + 22), (px, y + 32)], fill=(178, 34, 34), width=2)
-    d.text((x + w - 8, y + 8), "300", font=SANS_B(26), anchor="ra", fill=RED)
-    d.text((x + w - 8, y + 36), "ARRESTED", font=SANS_B(10), anchor="ra", fill=INK)
+    d.text((x + w - 8, y + 8), "132", font=SANS_B(26), anchor="ra", fill=RED)
+    d.text((x + w - 8, y + 32), "FACTORIES SHUT", font=SANS_B(10), anchor="ra", fill=INK)
 
 def art_quake(d, x, y, w, h):
     """Seismograph trace + M5.7."""
@@ -356,7 +348,7 @@ def art_quake(d, x, y, w, h):
 
 ART = {"summit": art_summit, "gulf": art_gulf, "drones": art_drones, "chart": art_chart,
        "gta": art_gta, "votes": art_votes, "money": art_money, "voyager": art_voyager,
-       "cyclone": art_cyclone, "quad": art_quad, "ipo": art_ipo, "strike": art_strike,
+       "cyclone": art_cyclone, "deals": art_deals, "ipo": art_ipo, "strike": art_strike,
        "quake": art_quake}
 
 # ---------------------------------------------------------------- layout
@@ -419,23 +411,27 @@ def draw_map(d, x, y, w, h):
                   outline=(140, 135, 120))
     # pins for leads (lon, lat) + dots for briefs (approx region centres)
     pins = {1: (113, 22), 2: (50, 27), 3: (36, 49), 4: (-77, 39), 5: (-122, 37),
-            6: (-77, 39), 7: (5, 50), 8: (-118, 34), 9: (80, 16), 10: (121, 14),
+            6: (-77, 39), 7: (5, 50), 8: (-118, 34), 9: (80, 16), 10: (113, 22),
             11: (-122, 37), 12: (90, 24), 13: (26, 45)}
     # offsets (px) for pins sharing a city, with connector lines.
     # Verified by geometry (proj + land test, 19 Nov): every badge sits
     # on land and >=17px from every other badge. 6 was in the Atlantic,
-    # 11 in the Pacific; 1-10, 3-13, 9-12 overlapped.
-    pin_off = {1: (6, -12), 5: (0, -18), 6: (-13, -13), 8: (15, 9),
+    # 11 in the Pacific; 1-10, 3-13, 9-12 overlapped. Pin 10 moved to
+    # Shenzhen with the Indonesia-China deals lead (rev5); pin 1 stacks
+    # above it on land (Hunan).
+    pin_off = {1: (0, -18), 5: (0, -18), 6: (-13, -13), 8: (15, 9),
                12: (0, -10), 13: (14, 12)}
     # jitter brief dots deterministically by story number
     import hashlib
-    brief_xy = {14: (18, 39), 15: (39, 9), 16: (34, 31), 17: (2, 47), 18: (121, 14),
-                19: (10, 52), 20: (45, 15), 21: (56, 26), 22: (-95, 38), 23: (-67, 10),
-                24: (-77, 39), 25: (32, 49), 26: (38, 48), 27: (122, 25), 28: (121, 24),
-                29: (-95, 38), 30: (-95, 38), 31: (20, 44), 32: (21, 42), 33: (14, 50),
-                34: (10, 52), 35: (25, 61), 36: (133, -25), 37: (113, -2), 38: (25, -2),
-                39: (-98, 39), 40: (90, 24), 41: (29, 41), 42: (35, 32), 43: (32, 1),
-                44: (32, -19), 45: (6, 11), 46: (-62, -3), 47: (77, 13), 48: (32, 0)}
+    # dots sit on each story's own city/region, spread so no two dots
+    # share a centre (checked pairwise, 19 Nov).
+    brief_xy = {14: (30, 36), 15: (38, 15), 16: (34, 31), 17: (2, 47), 18: (121, 14),
+                19: (-1, 51), 20: (47, 18), 21: (56, 26), 22: (-122, 47), 23: (-67, 10),
+                24: (-77, 39), 25: (20, 54), 26: (38, 48), 27: (139, 36), 28: (77, 21),
+                29: (-122, 37), 30: (-93, 45), 31: (13, 48), 32: (21, 42), 33: (-1, 52),
+                34: (10, 52), 35: (25, 61), 36: (133, -25), 37: (113, -2), 38: (39, 9),
+                39: (-100, 50), 40: (90, 24), 41: (29, 41), 42: (-3, 40), 43: (33, 2),
+                44: (41, 3), 45: (6, 11), 46: (-62, -3), 47: (77, 13), 48: (30, -2)}
     for n, (lon, lat) in brief_xy.items():
         px, py = proj(lon, lat)
         d.ellipse([px - 3, py - 3, px + 3, py + 3], fill=REGION_COLOR[
@@ -487,7 +483,7 @@ def render():
     # ---- UTC strip
     d.rectangle([10, 104, W - 10, 122], fill=(255, 255, 255), outline=(200, 195, 180), width=1)
     d.text((16, 113), "THE DAY IN UTC", font=SANS_B(10), anchor="lm", fill=NAVY)
-    utc = [("00:00", "141 drones launched"), ("07:43", "126 downed"),
+    utc = [("00:00", "141 drones launched"), ("08:00", "126 downed"),
            ("10:16", "Voyager 1 light-day"), ("18:04", "Dhaka arrests"),
            ("19:00", "Fed minutes"), ("21:00", "Dow closes -561")]
     ux = 150
@@ -532,7 +528,7 @@ def render():
            font=SANS(10), fill=INK)
     d.text((18, fy + 48),
            "DUE THU 19 NOV: Trump–Xi–Putin trilateral in Shenzhen. Sources: AP · Reuters · "
-           "NASA · Fed · USGS · IMD · CNN. All 48 stories dated Wednesday 18 November 2026.",
+           "NASA · Fed · USGS · IMD · CNN · Sensor Tower. All 48 stories dated Wednesday 18 November 2026.",
            font=SANS(10), fill=INK)
     return img
 
