@@ -3,7 +3,7 @@
 48 verified 18 Nov 2026 stories, 7 regions, 13 flat-vector infographic panels drawn
 entirely with PIL primitives (no photos). Deterministic: same bytes every run.
 Layout: masthead + region bar + UTC strip + 3 heroes + 10 medium panels +
-compact world map + 3-column briefs + DATE CHECK footer.
+compact world map + 3-column briefs + SOURCES footer.
 """
 import textwrap
 from PIL import Image, ImageDraw, ImageFont
@@ -63,11 +63,11 @@ REGION_COLOR = {
 }
 
 LEADS = [
-    (1, "ASIA", "AP", "Three presidents, one table in Shenzhen",
-     "Xi and Putin meet at APEC's first day; Trump joins both for a trilateral on Thursday.",
+    (1, "ASIA", "AP", "Three presidents greet in Shenzhen",
+     "Trump, Xi and Putin meet at APEC's welcome reception on day one.",
      "summit"),
     (2, "MIDDLE EAST", "CLAIM", "Iran fires on US bases in the Gulf",
-     "Drones aimed at Kuwait and Bahrain after a US strike on Qeshm Island; a tanker is hit in Hormuz.",
+     "Iran claims drones hit US bases in Kuwait and Bahrain; both report interceptions, no damage.",
      "gulf"),
     (3, "EUROPE", "AP", "Russia launches 141 drones overnight",
      "Ukraine downs 126 by 08:00; six hurt in Dnipro as strikes hit seven locations.",
@@ -75,31 +75,31 @@ LEADS = [
     (4, "AMERICAS", "FED", "Fed minutes point to more hikes; Dow falls 561",
      "Almost all back further rises; some see a bigger move in December.",
      "chart"),
-    (5, "WORLD", "SENSOR TOWER", "GTA VI launches at midnight tonight",
-     "Take-Two up 6% on launch eve; 17.1m pre-orders, Metacritic 99.",
+    (5, "WORLD", "SENSOR TOWER", "GTA VI counts down to midnight launch",
+     "Take-Two up 8%; est. 17.1m units sold (Sensor Tower), Metacritic 99.",
      "gta"),
     (6, "AMERICAS", "CNN", "Jeffries wins speaker nomination 251-11",
      "Democrats renominate Jeffries; if elected in January he would be the first Black Speaker.",
      "votes"),
-    (7, "EUROPE", "REUTERS", "EU offers Ukraine a EUR 45bn loan",
-     "EUR 25bn for arms, EUR 20bn for the budget, tied to anti-graft reforms.",
+    (7, "EUROPE", "REUTERS", "EU proposes EUR 45bn loan for Ukraine",
+     "EUR 25bn arms, EUR 20bn budget in 2027; needs all 27 to agree.",
      "money"),
     (8, "WORLD", "NASA", "Voyager 1 reaches one light-day",
      "16.1 billion miles from Earth; a one-way signal now takes a full day.",
      "voyager"),
     (9, "ASIA", "IMD", "Cyclone Akvan bears down on Andhra",
-     "Winds of 100-110 km/h, gusting 120; landfall expected Friday as the coast braces.",
+     "Landfall forecast Friday, Narsapur to Puri; winds 90-100, gusting 110.",
      "cyclone"),
-    (10, "ASIA", "REUTERS", "Indonesia, China seal $71.8bn in deals",
+    (10, "ASIA", "REUTERS", "Indonesia, China agree $71.8bn in deals",
      "Four partnerships at APEC Shenzhen, incl. 10 smart cities; $50bn Danantara-led deal.",
      "deals"),
     (11, "AMERICAS", "REUTERS", "Anthropic prices its IPO at $83",
-     "Above the $70-78 range; shares start trading Thursday as ANT.",
+     "Above the $70-78 range; ticker ANT on the Nasdaq.",
      "ipo"),
     (12, "ASIA", "AP", "Bangladesh garment strike spreads",
-     "132 factories shut, hundreds arrested as workers demand Tk30,000 a month.",
+     "132 factories shut in Ashulia; hundreds arrested over Tk30,000 wage demand.",
      "strike"),
-    (13, "EUROPE", "USGS", "Magnitude 5.7 quake shakes Romania",
+    (13, "EUROPE", "INFP", "Magnitude 5.7 quake shakes Romania",
      "Vrancea tremor felt across Ukraine and Moldova; no major damage reported.",
      "quake"),
 ]
@@ -109,11 +109,11 @@ BRIEFS = [
     (14, "WORLD", "COP31 talks stall over fossil fuels in Antalya"),
     (15, "AFRICA", "Ethiopia and Eritrea mass troops at their border"),
     (16, "MIDDLE EAST", "Israel ground op crosses Gaza's Yellow Line"),
-    (17, "EUROPE", "146,000 march in France over cost of living"),
+    (17, "EUROPE", "EU creates Sanctions Office, names Danielsson envoy"),
     (18, "ASIA", "Trump seals trade understanding with Manila"),
     (19, "EUROPE", "UK, EU drop 'trusted partnership' term"),
-    (20, "MIDDLE EAST", "Saudi-backed forces strike Houthi targets"),
-    (21, "MIDDLE EAST", "UAE oil tanker attacked in Strait of Hormuz"),
+    (20, "MIDDLE EAST", "Saudi coalition says it hit 60 Houthi targets"),
+    (21, "MIDDLE EAST", "One missing, 11 hurt after Hormuz tanker attack"),
     (22, "AMERICAS", "Outages hit Microsoft, FAA and banks; Rubio: no link found"),
     (23, "AMERICAS", "Hegseth announces US-Venezuela military ties in Caracas"),
     (24, "AMERICAS", "Waller calls for half-point Fed hike in December"),
@@ -121,12 +121,12 @@ BRIEFS = [
     (26, "EUROPE", "Ukraine refinery strikes cut Russian output 45%"),
     (27, "ASIA", "Japan exports hit record ¥11.8tn in October"),
     (28, "ASIA", "India-US trade deal nearly done, signing waits"),
-    (29, "AMERICAS", "Nvidia slips 2.9% a day after its earnings beat"),
+    (29, "AMERICAS", "Nvidia slips 2.9% to $150.96"),
     (30, "AMERICAS", "UnitedHealth falls 10% on Medicare audit plan"),
     (31, "EUROPE", "Germany adopts first financial-literacy plan"),
     (32, "EUROPE", "Officials: sunken LPG tanker was hit by 4 projectiles"),
     (33, "EUROPE", "UK inflation hits 3.6%, highest in a year"),
-    (34, "EUROPE", "EU Parliament threatens to block €1.8tn budget"),
+    (34, "EUROPE", "EU Parliament may block €1.8tn budget over cuts"),
     (35, "EUROPE", "EU agrees to speed up grid permits"),
     (36, "OCEANIA", "Australia sanctions over West Bank settlements"),
     (37, "ASIA", "EU approves signing EU-Indonesia trade deals"),
@@ -137,9 +137,9 @@ BRIEFS = [
     (42, "EUROPE", "Spain approves 7 decree-laws, €182m flood aid"),
     (43, "AFRICA", "Uganda activist Mugumya charged with treachery"),
     (44, "AFRICA", "EU gives €550,000 for Moyale displaced"),
-    (45, "AFRICA", "AfDB funds $750,000 ECOWAS Data Embassy"),
+    (45, "AFRICA", "AfDB gives $1m for ECOWAS Data Embassy"),
     (46, "AMERICAS", "China's Jetour to build cars in Brazil"),
-    (47, "ASIA", "Tendulkar leads tributes a day after Dhoni's farewell"),
+    (47, "ASIA", "Tendulkar posts tribute to Dhoni"),
     (48, "AFRICA", "Uganda Airlines starts daily Entebbe-Kigali flights"),
 ]
 
@@ -163,7 +163,7 @@ def art_summit(d, x, y, w, h):
         d.ellipse([cxx - 17, y + 12, cxx + 17, y + 46], fill=c, outline=INK, width=2)
     d.text((x + w / 2, y + h - 46), "XI  ·  PUTIN  ·  TRUMP", font=SANS_B(13),
            anchor="ma", fill=INK)
-    d.text((x + w / 2, y + h - 26), "TRILATERAL THU 19 NOV", font=SANS_B(11),
+    d.text((x + w / 2, y + h - 26), "APEC · SHENZHEN", font=SANS_B(11),
            anchor="ma", fill=RED)
 
 def art_gulf(d, x, y, w, h):
@@ -295,8 +295,8 @@ def art_cyclone(d, x, y, w, h):
     d.polygon([(x + w * 0.68, y), (x + w, y), (x + w, y + h), (x + w * 0.78, y + h)],
               fill=(214, 196, 150))
     d.text((x + w - 8, y + 8), "ANDHRA", font=SANS_B(10), anchor="ra", fill=INK)
-    d.text((x + w - 8, y + h - 40), "100-110", font=SANS_B(24), anchor="ra", fill=(20, 60, 110))
-    d.text((x + 10, y + h - 14), "GUSTING 120 · LANDFALL FRI", font=SANS_B(10), fill=INK)
+    d.text((x + w - 8, y + h - 40), "90-100", font=SANS_B(24), anchor="ra", fill=(20, 60, 110))
+    d.text((x + 10, y + h - 14), "GUSTING 110 · LANDFALL FRI", font=SANS_B(10), fill=INK)
 
 def art_deals(d, x, y, w, h):
     """Indonesia-China deals: $71.8bn, 4 partnerships at APEC."""
@@ -311,7 +311,7 @@ def art_ipo(d, x, y, w, h):
     d.rectangle([x + 10, y + 6, x + w - 10, y + 40], fill=(15, 118, 110))
     d.text((x + w / 2, y + 23), "$83", font=SANS_B(28), anchor="mm", fill=(255, 255, 255))
     d.text((x + w / 2, y + 52), "ABOVE $70-78 RANGE", font=SANS_B(10), anchor="ma", fill=INK)
-    d.text((x + w / 2, y + h - 12), "TRADES THU AS ANT", font=SANS_B(10), anchor="ma", fill=INK)
+    d.text((x + w / 2, y + h - 12), "NASDAQ: ANT", font=SANS_B(10), anchor="ma", fill=INK)
 
 def art_strike(d, x, y, w, h):
     """Garment strike: factory + picket line + 300 arrested."""
@@ -414,7 +414,7 @@ def draw_map(d, x, y, w, h):
             6: (-77, 39), 7: (5, 50), 8: (-118, 34), 9: (80, 16), 10: (113, 22),
             11: (-122, 37), 12: (90, 24), 13: (26, 45)}
     # offsets (px) for pins sharing a city, with connector lines.
-    # Verified by geometry (proj + land test, 19 Nov): every badge sits
+    # Verified by geometry (proj + land test): every badge sits
     # on land and >=17px from every other badge. 6 was in the Atlantic,
     # 11 in the Pacific; 1-10, 3-13, 9-12 overlapped. Pin 10 moved to
     # Shenzhen with the Indonesia-China deals lead (rev5); pin 1 stacks
@@ -424,7 +424,7 @@ def draw_map(d, x, y, w, h):
     # jitter brief dots deterministically by story number
     import hashlib
     # dots sit on each story's own city/region, spread so no two dots
-    # share a centre (checked pairwise, 19 Nov).
+    # share a centre (checked pairwise).
     brief_xy = {14: (30, 36), 15: (38, 15), 16: (34, 31), 17: (2, 47), 18: (121, 14),
                 19: (-1, 51), 20: (47, 18), 21: (56, 26), 22: (-122, 47), 23: (-67, 10),
                 24: (-77, 39), 25: (20, 54), 26: (38, 48), 27: (139, 36), 28: (77, 21),
@@ -483,8 +483,8 @@ def render():
     # ---- UTC strip
     d.rectangle([10, 104, W - 10, 122], fill=(255, 255, 255), outline=(200, 195, 180), width=1)
     d.text((16, 113), "THE DAY IN UTC", font=SANS_B(10), anchor="lm", fill=NAVY)
-    utc = [("00:00", "141 drones launched"), ("08:00", "126 downed"),
-           ("10:16", "Voyager 1 light-day"), ("18:04", "Dhaka arrests"),
+    utc = [("00:48", "Romania quake M5.7"), ("08:00", "126 downed"),
+           ("10:16", "Voyager 1 light-day"), ("18:04", "Dhaka unrest reported"),
            ("19:00", "Fed minutes"), ("21:00", "Dow closes -561")]
     ux = 150
     for t, label in utc:
@@ -518,17 +518,15 @@ def render():
                 d.text((cx + 16, cy), line, font=SANS(9), fill=INK)
                 cy += 11
             cy += 3
-    # ---- footer: DATE CHECK
+    # ---- footer: SOURCES
     fy = 946
     d.rectangle([10, fy, W - 10, 1014], fill=(255, 240, 235), outline=RED, width=2)
-    d.text((18, fy + 10), "DATE CHECK", font=SANS_B(12), fill=RED)
+    d.text((18, fy + 10), "SOURCES", font=SANS_B(12), fill=RED)
     d.text((18, fy + 30),
-           "NOT 18 NOV — reported Tue 17 Nov: Kerch Bridge span collapse · Peltola wins Alaska "
-           "(AP call) · Nvidia $115.8bn quarter · Dhoni retires from IPL · An-12 crash, 19 killed.",
+           "AP · Reuters · NASA · Fed · INFP · IMD · CNN · Sensor Tower.",
            font=SANS(10), fill=INK)
     d.text((18, fy + 48),
-           "DUE THU 19 NOV: Trump–Xi–Putin trilateral in Shenzhen. Sources: AP · Reuters · "
-           "NASA · Fed · USGS · IMD · CNN · Sensor Tower. All 48 stories dated Wednesday 18 November 2026.",
+           "Every story on this page was first reported on Wednesday 18 November 2026.",
            font=SANS(10), fill=INK)
     return img
 
