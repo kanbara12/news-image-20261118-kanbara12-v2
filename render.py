@@ -185,7 +185,7 @@ def art_gulf(d, x, y, w, h):
     d.arc([x + w * 0.1, y + h * 0.3, x + w * 0.9, y + h * 0.95], 200, 340,
           fill=(255, 200, 60), width=2)
     d.text((x + 10, y + h - 22), "KUWAIT · BAHRAIN", font=SANS_B(11), fill=(255, 255, 255))
-    d.text((x + w - 10, y + 8), "4 GULF STATES", font=SANS_B(11),
+    d.text((x + w - 10, y + 8), "PERSIAN GULF", font=SANS_B(11),
            anchor="ra", fill=(255, 200, 60))
 
 def art_drones(d, x, y, w, h):
@@ -235,9 +235,9 @@ def art_gta(d, x, y, w, h):
             ey = y + h * 0.18 + math.sin(a - 1.57) * 12
             d.line([(bx, y + h * 0.18), (ex, ey)], fill=(40, 30, 30), width=2)
     d.text((x + 12, y + 6), "17.1M", font=SANS_B(30), fill=(40, 30, 30))
-    d.text((x + 12, y + 38), "PRE-ORDERS", font=SANS_B(11), fill=(40, 30, 30))
+    d.text((x + 12, y + 38), "UNITS SOLD", font=SANS_B(11), fill=(40, 30, 30))
     d.rectangle([x, y + h - 22, x + w, y + h], fill=(40, 30, 30))
-    d.text((x + w - 10, y + h - 11), "TAKE-TWO +6% · 99 METACRITIC", font=SANS_B(11),
+    d.text((x + w - 10, y + h - 11), "TAKE-TWO +8% · 99 METACRITIC", font=SANS_B(11),
            anchor="rm", fill=(255, 255, 255))
 
 def art_votes(d, x, y, w, h):
