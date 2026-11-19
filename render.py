@@ -233,6 +233,10 @@ def art_gta(d, x, y, w, h):
             import math
             ex = bx + math.cos(a - 1.57) * 22
             ey = y + h * 0.18 + math.sin(a - 1.57) * 12
+            # clamp fronds inside the art rect (rightmost palm at 0.94
+            # used to bleed ~5px past the panel edge into the gutter)
+            ex = max(x + 1, min(x + w - 1, ex))
+            ey = max(y + 1, min(y + h - 1, ey))
             d.line([(bx, y + h * 0.18), (ex, ey)], fill=(40, 30, 30), width=2)
     d.text((x + 12, y + 6), "17.1M", font=SANS_B(30), fill=(40, 30, 30))
     d.text((x + 12, y + 38), "UNITS SOLD", font=SANS_B(11), fill=(40, 30, 30))
@@ -446,8 +450,7 @@ def draw_map(d, x, y, w, h):
             d.ellipse([px - 2, py - 2, px + 2, py + 2], fill=RED)
         px, py = px + ox, py + oy
         d.ellipse([px - 8, py - 8, px + 8, py + 8], fill=RED, outline=(255, 255, 255), width=1)
-        d.text((px, py), str(n), font=SANS_B(10), anchor="mm", fill=(255, 255, 255),
-               stroke_width=1, stroke_fill=(255, 255, 255))
+        d.text((px, py), str(n), font=SANS_B(10), anchor="mm", fill=(255, 255, 255))
     d.text((x + 8, y + h - 20), "Pins are approximate.", font=SANS(9), fill=GREY)
 
 def render():
