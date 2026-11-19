@@ -318,7 +318,9 @@ def art_strike(d, x, y, w, h):
     d.rectangle([x, y, x + w, y + h], fill=(240, 235, 220))
     # factory block, bottom-left
     d.rectangle([x + 12, y + h - 30, x + w * 0.6, y + h - 8], fill=(120, 110, 100))
-    d.rectangle([x + w * 0.52, y + h - 48, x + w * 0.52 + 9, y + h - 8], fill=(120, 110, 100))
+    # chimney kept left of the "FACTORIES SHUT" text (was x + w*0.52, which
+    # crossed the "F"); windows are drawn after it, so they cover its base
+    d.rectangle([x + w * 0.30, y + h - 48, x + w * 0.30 + 9, y + h - 8], fill=(120, 110, 100))
     for i in range(2):
         d.rectangle([x + 20 + i * 24, y + h - 24, x + 36 + i * 24, y + h - 14],
                     fill=(255, 220, 120))
@@ -476,9 +478,14 @@ def render():
             d.text((sx + wseg / 2, 90), label, font=SANS_B(8),
                    anchor="mm", fill=(255, 255, 255))
         else:
-            # narrow segment (OCEANIA sits between two wide segments, so
-            # its smaller label overflows onto empty space, never on text)
-            d.text((sx + wseg / 2, 90), label, font=SANS_B(7),
+            # narrow segment: label on a pill in the region colour, so it
+            # never spills as bare text onto a neighbour segment
+            cx = sx + wseg / 2
+            tw = d.textlength(label, font=SANS_B(7))
+            d.rounded_rectangle([cx - tw / 2 - 4, 84, cx + tw / 2 + 4, 96],
+                                radius=6, fill=REGION_COLOR[r],
+                                outline=(255, 255, 255), width=1)
+            d.text((cx, 90), label, font=SANS_B(7),
                    anchor="mm", fill=(255, 255, 255))
     # ---- UTC strip
     d.rectangle([10, 104, W - 10, 122], fill=(255, 255, 255), outline=(200, 195, 180), width=1)
